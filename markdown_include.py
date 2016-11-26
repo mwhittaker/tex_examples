@@ -1,4 +1,5 @@
 from subprocess import call
+import time
 import os
 import re
 import sys
@@ -21,7 +22,7 @@ def main(filename):
                 png = root + ".png"
 
                 print "```tex\n{}```".format(cat(include))
-                call(["latexmk", "-quiet", "-interaction=nonstopmode", include])
+                call(["latexmk", "-pdf", "-quiet", "-interaction=nonstopmode", include])
                 call(["convert", "-density", "150", pdf, "-quality", "90", png])
                 print "![{}]({})".format(include, png)
             else:

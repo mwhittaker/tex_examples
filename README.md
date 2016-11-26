@@ -40,3 +40,26 @@ not a and not b is \ifboolexpr{not togl{a} or not togl{b}}{true}{false} \\
 \end{document}
 ```
 ![if.tex](if.png)
+
+## For Loops
+```tex
+\documentclass[varwidth]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\foreach \x in {1, 2, 3}{
+  \foreach \y in {1, 2, 3}{
+    (\x, \y),
+  }
+
+}
+
+\foreach \x in {1, ..., 4}{
+  \foreach \y in {1, ..., 4}{
+    (\x, \y),
+  }
+
+}
+\end{document}
+```
+![for_loops.tex](for_loops.png)
