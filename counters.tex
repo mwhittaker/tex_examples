@@ -1,0 +1,20 @@
+\documentclass[varwidth]{standalone}
+\usepackage{etoolbox}
+
+\begin{document}
+\newcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\stepcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\refstepcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\addtocounter{a}{1}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\setcounter{a}{4}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+
+\whileboolexpr{test {\ifnumcomp{\value{a}}{<}{10}}}{
+  \arabic{a},
+  \stepcounter{a}
+}
+\end{document}

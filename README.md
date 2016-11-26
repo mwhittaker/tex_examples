@@ -1,3 +1,9 @@
+[H[JThis is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+[H[JThis is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
 # LaTeX Examples
 
 ## Conditionals
@@ -63,3 +69,28 @@ not a and not b is \ifboolexpr{not togl{a} or not togl{b}}{true}{false} \\
 \end{document}
 ```
 ![for_loops.tex](for_loops.png)
+
+## Counters
+```tex
+\documentclass[varwidth]{standalone}
+\usepackage{etoolbox}
+
+\begin{document}
+\newcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\stepcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\refstepcounter{a}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\addtocounter{a}{1}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+\setcounter{a}{4}
+\thea, \arabic{a}, \alph{a}, \Alph{a}, \roman{a}, \Roman{a} \\
+
+\whileboolexpr{test {\ifnumcomp{\value{a}}{<}{10}}}{
+  \arabic{a},
+  \stepcounter{a}
+}
+\end{document}
+```
+![counters.tex](counters.png)

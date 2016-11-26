@@ -5,3 +5,6 @@
 
 ## For Loops
 #include "for_loops.tex"
+
+## Counters
+#include "counters.tex"
