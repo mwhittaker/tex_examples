@@ -8,3 +8,6 @@
 
 ## Counters
 #include "counters.tex"
+
+## Subfigures
+#include "subfigures.tex"

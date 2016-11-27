@@ -88,3 +88,44 @@ not a and not b is \ifboolexpr{not togl{a} or not togl{b}}{true}{false} \\
 \end{document}
 ```
 ![counters.tex](counters.png)
+
+## Subfigures
+```tex
+\documentclass[varwidth]{standalone}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+
+\newcommand{\square}[1]{
+  \tikz{\node[fill, minimum width=#1, minimum height=#1] () at (0, 0) {};}
+}
+
+\newcommand{\squarefig}[1]{
+  \begin{figure}
+    \centering
+    \begin{subfigure}[#1]{0.3\textwidth}
+      \centering
+      \square{2cm}
+      \caption{}
+    \end{subfigure}
+    \begin{subfigure}[#1]{0.3\textwidth}
+      \centering
+      \square{3cm}
+      \caption{}
+    \end{subfigure}
+    \begin{subfigure}[#1]{0.3\textwidth}
+      \centering
+      \square{4cm}
+      \caption{}
+    \end{subfigure}
+    \caption{}
+  \end{figure}
+}
+
+\begin{document}
+\squarefig{b}
+\squarefig{c}
+\squarefig{t}
+\end{document}
+```
+![subfigures.tex](subfigures.png)
